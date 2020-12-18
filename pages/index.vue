@@ -1,73 +1,93 @@
+/* eslint-disable no-unused-expressions */
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        moover
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <section class="portada-img">
+      <h1>Servicio de mensajería </h1>
+      <p>Realiza entregas locales en menos de 90 minutos desde tu computadora o App, cotiza tus servicios directo en la plataforma. Sin tarifas dinámicas: pagas lo marcado en la cotización. Calculamos la mejor ruta de entrega para que pagues menos. ¡Estamos revolucionando la mensajería express!</p>
+      <NuxtLink to="/send" class="button">
+        Realiza tu envio aquí
+      </NuxtLink>
+      <span>o</span>
+      <NuxtLink class="register" to="/register">
+        Registrate aquí
+      </NuxtLink>
+    </section>
+    <Card />
   </div>
 </template>
-
 <script>
-export default {}
+import Card from '~/components/Card'
+export default {
+  components: {
+    Card
+  },
+  head () {
+    return {
+      title: 'Moover'
+    }
+  }
+
+}
 </script>
+<style scoped>
+  .portada-img{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 320px;
+    height: 80vh;
+    background-image:    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url('~assets/img/portada.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  h1 {
+    margin-top: 5rem;
+    text-align: center;
+    color: var(--primary-color);
+  }
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  .button[disabled] {
+    cursor: default;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .button {
+    background: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0.5rem 2rem 0.5rem;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    max-width: 15rem;
+    min-width: 10rem;
+  }
+  p{
+    color: #ffff;
+    font-size: 12px;
+    margin: 2rem;
+    max-width: 30rem;
+  }
+  span{
+    color: #fff;
+  }
+  .register{
+    padding-top: 12px;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
 </style>
