@@ -20,7 +20,7 @@
         <input id="password" v-model="user.cantEnvMonth" type="text">
         <label for="username">Informacion del producto a transportar<span> *</span></label>
         <input id="password" v-model="user.infoProduct" type="text">
-        <NuxtLink to="/profile" class="button">
+        <NuxtLink to="/" class="button">
           Enviar
         </NuxtLink>
       </form>

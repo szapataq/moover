@@ -15,7 +15,7 @@
         <label for="username">Numero de teléfono<span> *</span></label>
         <input id="password" v-model="user.numMobil" type="text">
 
-        <NuxtLink to="/profile" class="button">
+        <NuxtLink to="/" class="button">
           Registrar
         </NuxtLink>
       </form>
