@@ -4,7 +4,7 @@
     <section class="portada-img">
       <h1>Servicio de mensajería </h1>
       <p>Realiza entregas locales en menos de 90 minutos desde tu computadora o App, cotiza tus servicios directo en la plataforma. Sin tarifas dinámicas: pagas lo marcado en la cotización. Calculamos la mejor ruta de entrega para que pagues menos. ¡Estamos revolucionando la mensajería express!</p>
-      <NuxtLink to="/send" class="button">
+      <NuxtLink to="/askMoove" class="button">
         Realiza tu envio aquí
       </NuxtLink>
       <span>o</span>

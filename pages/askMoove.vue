@@ -1,41 +1,138 @@
 <template>
-  <div class="Nav-button">
-    <NuxtLink to="/askMoove" class="button">
-      Pedir un moove
-    </NuxtLink>
-    <NuxtLink to="/track" class="button">
-      Rastrear
-    </NuxtLink>
+  <div id="app">
+    <v-app id="inspire">
+      <div class="Nav-button">
+        <NuxtLink to="/askMoove">
+          <v-btn
+            color="primary"
+            class="button"
+          >
+            Pedir un moover
+          </v-btn>
+        </NuxtLink>
+        <NuxtLink to="/track">
+          <v-btn
+            color="primary"
+            class="button"
+          >
+            rastrear
+          </v-btn>
+        </NuxtLink>
+      </div>
+      <div>
+        <v-container class="d-flex justify-space-around">
+          <v-radio-group
+            v-model="row"
+            row
+          >
+            <v-radio
+              label="Sobre"
+              value="radio-1"
+            />
+            <v-radio
+              label="Caja mediana"
+              value="radio-2"
+            />
+            <v-radio
+              label="Caja grande"
+              value="radio-3"
+            />
+          </v-radio-group>
+        </v-container>
+      </div>
+      <section class="form-moover">
+        <form @submit.prevent>
+          <label for="username">Nombre y apellidos<span> *</span></label>
+          <input id="username" v-model="user.nameBussines" type="text">
+          <label for="username">Correo electrónico<span> *</span></label>
+          <input id="email" v-model="user.email" type="text">
+          <label for="username">Numero de teléfono<span> *</span></label>
+          <input id="numMobil" v-model="user.numMobil" type="text">
+          <label for="username">Origen<span> *</span></label>
+          <input id="origen" v-model="user.origen" type="text">
+          <label for="username">Destino<span> *</span></label>
+          <input id="destino" v-model="user.destino" type="text">
+          <div class="Nav-button">
+            <NuxtLink to="/askMoove">
+              <v-btn
+                color="secondary"
+                class="button"
+              >
+                Limpiar
+              </v-btn>
+            </NuxtLink>
+            <NuxtLink to="/askMoove">
+              <v-btn
+                color="warning"
+                class="button"
+              >
+                cotizar
+              </v-btn>
+            </NuxtLink>
+            <NuxtLink to="/askMoove">
+              <v-btn
+                color="primary"
+                class="button"
+              >
+                enviar
+              </v-btn>
+            </NuxtLink>
+          </div>
+        </form>
+      </section>
+    </v-app>
   </div>
 </template>
+<script>
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
+Vue.use(Vuetify)
+
+export default {
+  data () {
+    return {
+      user: {
+        nameClient: '',
+        email: '',
+        numMobil: '',
+        origen: '',
+        destino: ''
+
+      }
+    }
+  }
+}
+</script>
 <style scoped>
   .Nav-button {
       display: flex;
       min-width: 320px;
       justify-content: space-around;
   }
-  .button[disabled] {
-    cursor: default;
-    opacity: 0.5;
-    cursor: not-allowed;
+  .form-moover{
+    display: grid;
+    min-width: 320px;
+    max-width: 40%;
+    margin:0px auto;
   }
-  .button {
-    background: var(--primary-color);
-    padding: 0.7rem;
-    margin: 1rem 0.5rem 2rem 0.5rem;
-    outline: none;
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+    margin: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #dedede;
     border-radius: 0.5rem;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    max-width: 15rem;
-    height: 1.5rem;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+    label {
+    font-size: 14px;
+    margin: 0.3rem 0.5rem;
+    margin-bottom: 0.25rem;
   }
 </style>

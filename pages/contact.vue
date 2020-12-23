@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="container-contact">
     <h2>Dejanos tus datos y nos contactaremos contigo</h2>
     <section>
       <img src="" alt="">
     </section>
-    <section>
+    <section class="container-form">
       <form @submit.prevent>
-        <label for="username">Nombre de la empresa <span> *</span></label>
+        <label for="">Nombre de la empresa <span> *</span></label>
         <input id="username" v-model="user.nameBussines" type="text">
-        <label for="username">Nombre<span> *</span></label>
+        <label for="">Nombre<span> *</span></label>
         <input id="username" v-model="user.nameBussines" type="text">
-        <label for="username">Apellido<span> *</span></label>
+        <label for="">Apellido<span> *</span></label>
         <input id="username" v-model="user.surname" type="text">
         <label for="username">Correo<span> *</span></label>
         <input id="password" v-model="user.email" type="text">
@@ -47,28 +47,21 @@ export default {
 }
 </script>
 <style scoped>
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  .container-contact{
+    display: grid;
+    min-width: 320px;
+    max-width: 40%;
+    margin:0px auto;
   }
   h2 {
     text-align: center;
+    margin: 20px;
   }
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-width:25rem;
+    margin: 0px auto;
   }
-
-  label {
-    font-size: 14px;
-    margin: 0.3rem 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-
   input {
     font-size: 16px;
     padding: 0.75rem 1rem;
@@ -79,40 +72,10 @@ export default {
     box-shadow: none;
     box-sizing: border-box;
   }
-
-  .button {
-    margin-top: 0.5rem;
+  label {
+    font-size: 14px;
+    margin: 0.3rem 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
-  .button[disabled] {
-    cursor: default;
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  .button {
-    background: var(--primary-color);
-    padding: 0.75rem 1.5rem;
-    outline: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    letter-spacing: 0.5px;
-    margin: 1rem 0.5rem 2rem 0.5rem;
-    text-decoration: none;
-  }
-    span{
-      color:rgb(240, 86, 86);
-    }
-
-  button:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    opacity: 0.8;
-  }
 </style>
